@@ -15,6 +15,6 @@ describe DayOne do
 	end
 
 	it "passes" do
-		DayOne.run(input).must_equal 514579
+		_(DayOne.run(input)).must_equal 514579
 	end
 end

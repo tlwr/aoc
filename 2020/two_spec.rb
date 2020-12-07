@@ -12,7 +12,7 @@ describe DayTwo do
 	end
 
 	it "parses the input" do
-		DayTwo.parse(input).must_equal [
+		_(DayTwo.parse(input)).must_equal [
 			DayTwo.policy(1..3, "a", "abcde"),
 			DayTwo.policy(1..3, "b", "cdefg"),
 			DayTwo.policy(2..9, "c", "ccccccccc"),
@@ -20,6 +20,6 @@ describe DayTwo do
 	end
 
 	it "passes" do
-		DayTwo.run(input).must_equal 2
+		_(DayTwo.run(input)).must_equal 2
 	end
 end
