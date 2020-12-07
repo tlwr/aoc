@@ -1,3 +1,3 @@
 .phony: spec
 spec:
-	find . -name '*_spec.rb' | xargs -I {} ruby {}
+	ruby -Ilib -r minitest/pride -e 'ARGV.each { |f| require f }' ./*_spec.rb
