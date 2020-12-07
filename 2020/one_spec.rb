@@ -2,7 +2,7 @@ require "minitest/autorun"
 
 require_relative "one"
 
-describe "day one" do
+describe DayOne do
 	let(:input) do
 		<<~INPUT
 		1721
@@ -15,6 +15,6 @@ describe "day one" do
 	end
 
 	it "passes" do
-		day_one(input).must_equal 514579
+		DayOne.run(input).must_equal 514579
 	end
 end
