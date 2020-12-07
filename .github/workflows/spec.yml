@@ -1,0 +1,20 @@
+---
+name: spec
+
+on:
+- push
+
+jobs:
+  year-2020:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+
+    - name: make spec
+      run: |
+        cd 2020
+        make spec
