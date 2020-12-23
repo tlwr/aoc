@@ -54,13 +54,9 @@ module DayTwenty
 	end
 
 	def self.run(input)
-		mapping = parse(input)
-
-		good_mappings = []
-
-		mapping
+		parse(input)
 			.permutation(9)
-			.each do |permuted_mapping|
+			.find do |permuted_mapping|
 				common = true
 
 				horizontal_checks = [
@@ -88,11 +84,8 @@ module DayTwenty
 					common = false unless common_edges(m1, m2)
 				end
 
-				good_mappings << permuted_mapping if common
+				common ? permuted_mapping : false
 			end
-
-		return good_mappings
-			.first
 			.map(&:first)
 			.values_at(0, 2, 6, 8)
 			.inject(:*)
